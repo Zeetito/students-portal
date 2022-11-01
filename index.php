@@ -6,8 +6,7 @@
 
 hello world.<br>
 
-<p>Good Morning <?php echo $_SESSION['fullname'];?><br> Hope you're having
-a nice day</p>
+<p>Good Morning <?php echo $_SESSION['fullname'];?><br> Have a Nice Day</p>
 
 
 <?php

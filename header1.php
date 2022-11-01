@@ -12,6 +12,7 @@
             <li class="nav-item"><a href="#">Home</a></li>
             <li class="nav-item"><a href="#">Profile</a></li>
             <li class="nav-item"><a href="#">Status</a></li>
+            <li class="nav-item"><a href="#">About Us</a></li>
         </ul>
     
     
