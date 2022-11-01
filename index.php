@@ -1,40 +1,16 @@
+<?php
+    include('config.php');
+    include('session.php');
+    include('header2.php');
+?>
 
-<?php include('header1.php')?>
-<?php $tilte="register"?>
+hello world.<br>
 
-<div style="width:50%">
-
-<fieldset>
-
-<legend>Login</legend>
-
-<form METHOD="POST" action="actions/register.php">
-
+<p>Good Morning <?php echo $_SESSION['fullname'];?><br> Hope you're having
+a nice day</p>
 
 
-<tr>
-<td>Full Name <input required type="text" name="full_name" ></td><br><br>
-</tr>
-<tr>
-<td>Studend ID <input required type="text" name="student_id" ></td><br><br>
-</tr>
-<tr>
-<td>Email <input required type="text" name="email" ></td><br><br>
-</tr>
-<tr>
-<td>password <input required type="password" name="password" ></td><br><br>
-</tr>
-<tr>
-<td>Phone <input required type="text" name="phone" ></td>
-<input type="submit" value="submit"><br><br>
-</tr>
-    
-    <button class="login"><a href="login.php">Log in</a></button> here if you Aready have an account.
-</form>
+<?php
+include('footer2.php')
 
-</fieldset>
-
-
-
-
-</div>
+?>

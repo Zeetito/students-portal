@@ -1,40 +1,40 @@
+<?php 
 
-<?php include('../config.php');?>
+    include('../config.php');
 
-<?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
-    if($_SERVER['REQUEST_METHOD'] == "POST"){
+        $username=$_POST['username'];
+        $student_id=$_POST['student_id'];
+        $password=$_POST['password'];
+    
+        $sql="SELECT * FROM students WHERE student_id='$student_id' AND password='$password' AND username ='$username' ";
 
-        $username = $_REQUEST['username'];
-        $student_id = $_REQUEST['student_id'];
-        $password = $_REQUEST['password'];
-
-        $sql = "SELECT *
-        FROM students
-        WHERE student_id='$student_id' 
-        AND password = '$password'
-        AND username='$username'";
         $result = $conn->query($sql);
-        if( $result){
 
-            $rows = $result->num_rows;
-            for ($j = 0 ; $j < $rows ; ++$j)
-                {
-                $result->data_seek($j);
-                $_SESSION["username"] = $result->fetch_assoc()['username'];
-                
-                $result->data_seek($j);
-                $_SESSION["password"] =$result->fetch_assoc()['password'];
-                
-                $result->data_seek($j);
-               $_SESSION["email"]=$result->fetch_assoc()['email'];
-                }
-            header("location: ../homepage.php");
+        if($result->num_rows === 1){
+            // echo "your login in was successfull";
+
+            $_SESSION['username'] = $username;
+            $_SESSION['student_id'] = $student_id;
+            $row = $result->fetch_assoc();
+            $_SESSION['fullname'] = $row["full_name"];
+
+            header('location: ../index.php');
+
         }else{
-            die("username or password incorrect");
+            header('location: ../login.php?$msg=invalid-credentials');
         }
-
         
     }
+        
+    
+   
+   
+   
+    // function inject_checker ($connection, $field){
+    //     return (htmlentities(trim(mysqli_real_escape_string($connection, $field))));
+   
+    
 
 ?>

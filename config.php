@@ -1,6 +1,6 @@
-<?php session_start();?>
+<?php 
+    session_start();
 
-<?php
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -11,7 +11,7 @@
 
     // Check connection
     if ($conn->connect_error) {
-        die("Connection failed:" . $conn->connect_error);
+        die("error: ". $conn->connect_error);
     }
        
 ?>
