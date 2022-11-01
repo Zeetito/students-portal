@@ -13,7 +13,7 @@
         $result = $conn->query($sql);
 
         if($result->num_rows === 1){
-            // echo "your login in was successfull";
+            // echo "your login in   was successfull";
 
             $_SESSION['username'] = $username;
             $_SESSION['student_id'] = $student_id;
